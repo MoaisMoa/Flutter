@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "layout_widget",
     "short_name": "layout_widget",
+=======
+    "name": "flutter_application",
+    "short_name": "flutter_application",
+>>>>>>> d2e8db93493d5bf669f57f2028c5bdd606fdce67
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
