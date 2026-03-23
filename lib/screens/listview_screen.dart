@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_widget/models/product.dart';
 
 class ListviewScreen extends StatefulWidget {
   const ListviewScreen({super.key});
@@ -15,11 +16,20 @@ class _ListviewScreenState extends State<ListviewScreen> {
       title: Text("상품 제목 ${index+1}"),
       subtitle: Text("상품 설명 ${index+1} 입니다."),
       trailing: const Icon(Icons.arrow_forward),
-      onTop: () {
+      onTap: () {
         // 아이템 클릭 시 동작
       },
-    )
-  );
+    ));
+
+    // 상품 객체 리스트
+    final List<Product> productList =
+      List.generate(10, (index) => Product(
+        image: "images/product${index+1}.webp",
+        title: "상품 제목 ${index+1}.",
+        description: "상품 설명 ${index+1} 입니다.",
+        price: 10000
+      )
+    );
 
   @override
   Widget build(BuildContext context) {
