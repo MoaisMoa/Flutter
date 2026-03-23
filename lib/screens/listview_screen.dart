@@ -25,7 +25,7 @@ class _ListviewScreenState extends State<ListviewScreen> {
     final List<Product> productList =
       List.generate(10, (index) => Product(
         image: "images/product${index+1}.webp",
-        title: "상품 제목 ${index+1}.",
+        title: "상품 제목 ${index+1}",
         description: "상품 설명 ${index+1} 입니다.",
         price: 10000
       )
@@ -33,17 +33,37 @@ class _ListviewScreenState extends State<ListviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("리스트 뷰"),),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
-        child: Center(
-          child:
-            ListView(
-              children: productWidgetList,
-            )
-        ),
-      ),
-    );
+    // return Scaffold(
+    //   appBar: AppBar(title: const Text("리스트 뷰"),),
+    //   body: Container(
+    //     padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
+    //     child: Center(
+          // child:
+          //   ListView(
+          //     children: productWidgetList,
+          //   )
+          ListView.builder(
+            itemCount: productList.length,
+            itemBuilder: (context, index) {
+              final product = productList[index];
+              return ListTile(
+                leading: Image.asset(product.image ?? "image/product.jpg"),
+                title: Text(product.title ?? "상품제목"),
+                subtitle:
+                Row(children: [
+                  Text((product.price ?? 0) as String),
+                  SizedBox(width: 20,),
+                  Text(product.description ?? "설명"),
+                ],),
+                trailing: const Icon(Icons.arrow_forward),
+                onTap: () {
+                  print('아이템 클릭');
+                }
+              );
+            },
+          );
+    //     ),
+    //   ),
+    // );
   }
 }
