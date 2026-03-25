@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# layout_widget
+
+A new Flutter project.
+=======
 # flutter_application
 
 A new Flutter project.
@@ -15,3 +20,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+>>>>>>> d2e8db93493d5bf669f57f2028c5bdd606fdce67
